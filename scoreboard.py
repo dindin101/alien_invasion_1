@@ -75,3 +75,9 @@ class Scoreboard():
         if self.stats.score > self.stats.high_score:
             self.stats.high_score = self.stats.score
             self.prep_high_score()
+
+    def save_high_score(self):
+        """Сохраняет рекорд в файл txt"""
+        with open('record score.txt', 'a') as file:
+            file.write('\n')
+            file.write(str(self.stats.high_score))

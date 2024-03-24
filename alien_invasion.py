@@ -38,6 +38,9 @@ class AlienInvasion:
         # Создание кнопки Play
         self.play_button = Button(self, "Играть")
 
+        # Сохранение рекорда в файл (ДОДЕЛАТЬ)
+
+
     def run_game(self):
         """Запуск основного цикла игры"""
 
@@ -142,6 +145,7 @@ class AlienInvasion:
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
             self.sb.check_high_score()
+            self.sb.save_high_score()
 
         if not self.aliens:
             self.bullets.empty()
