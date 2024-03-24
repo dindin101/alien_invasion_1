@@ -62,7 +62,7 @@ class Scoreboard():
             ship = Ship(self.ai_game)
             ship.rect.x = 10 + ship_number * ship.rect.width
             ship.rect.y = 10
-
+            self.ships.add(ship)
 
     def show_score(self):
         """Выведение счета, рекорда, корабли на экран"""
