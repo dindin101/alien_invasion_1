@@ -135,6 +135,7 @@ class AlienInvasion:
         # Интервал между пришельцами равен ширине пришельца
         alien = Alien(self)
         alien_width, alien_height = alien.rect.size
+
         available_space_x = self.settings.screen_width - (2 * alien_width)
         number_aliens_x = available_space_x // (2 * alien_width)
 
@@ -194,7 +195,7 @@ class AlienInvasion:
     def _check_aliens_bottom(self):
         """Проверяет касание с нижней частью экрана"""
         screen_rect = self.screen.get_rect()
-        for alien in self.screen.get_rect():
+        for alien in self.aliens.sprites():
             if alien.rect.bottom >= self.settings.screen_height:
                 self._ship_hit()
                 break
